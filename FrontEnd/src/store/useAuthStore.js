@@ -10,9 +10,9 @@ export const userAuthStore = create((set)=>({
 
     isCheckingAuth:true,
 
-    isCheckingAuth : async()=>{
+    checkAuth : async()=>{
         try{
-            const response = await axiosInstance.get("/auth/check");
+            const res = await axiosInstance.get("/auth/check");
             set({authUser:res.data})
         }catch(error){
             console.log(error);

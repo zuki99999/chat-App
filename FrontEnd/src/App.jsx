@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import { userAuthStore } from './store/useAuthStore';
 import { useEffect } from 'react';
 
-import {Loader} from "lucide-react"
+import {CloudHail, Loader} from "lucide-react"
 
 
 
@@ -44,13 +44,14 @@ const brousingRouter = createBrowserRouter([
 
 function App() {
 
-    const {authUser,checkAuth,isCheckingAuth}=userAuthStore();
+    const {authUser,checkAuth,isCheckingAuth} =userAuthStore();
+
 
     if(isCheckingAuth && !authUser)return(
       <div className='flex items-center justify-center h-screen'>
         <Loader className="size-10 animate-spin"/>
       </div>
-    )
+    );
 
     useEffect(()=>{
       checkAuth();
